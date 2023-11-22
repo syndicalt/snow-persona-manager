@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description/>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_975207_persona_m_persona_requests</name>
+        <operation display_value="read">read</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-18 02:40:11</sys_created_on>
+        <sys_id>a24b950607aaf11027f6f4be7c1ed0c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_975207_persona_m_persona_requests</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_security_acl_a24b950607aaf11027f6f4be7c1ed0c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-18 02:40:11</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sys_security_acl_a24b950607aaf11027f6f4be7c1ed0c8</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description/><local_or_existing>Local</local_or_existing><name>x_975207_persona_m_persona_requests</name><operation display_value="read">read</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-11-18 02:40:11</sys_created_on><sys_id>a24b950607aaf11027f6f4be7c1ed0c8</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_975207_persona_m_persona_requests</sys_name><sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package><sys_policy/><sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope><sys_update_name>sys_security_acl_a24b950607aaf11027f6f4be7c1ed0c8</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-11-18 02:40:11</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>181605486</payload_hash>
+        <record_name>x_975207_persona_m_persona_requests</record_name>
+        <reverted_from/>
+        <source>5e48114207aaf11027f6f4be7c1ed06c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-18 02:40:11</sys_created_on>
+        <sys_id>e64b950607aaf11027f6f4be7c1ed0ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18be04cced80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-18 02:40:11</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>2e4b95068eaaf1104daf0e4233c6f4c9</update_guid>
+        <update_guid_history>2e4b95068eaaf1104daf0e4233c6f4c9:181605486</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 05:25:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>6091cd3d447e4fd882abba113cff66a4</sys_id>
+        <sys_metadata>a24b950607aaf11027f6f4be7c1ed0c8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_975207_persona_m_persona_requests</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent display_value="">554b550607aaf11027f6f4be7c1ed0f7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sys_security_acl_a24b950607aaf11027f6f4be7c1ed0c8</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_a24b950607aaf11027f6f4be7c1ed0c8">e64b950607aaf11027f6f4be7c1ed0ca</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-21 05:25:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

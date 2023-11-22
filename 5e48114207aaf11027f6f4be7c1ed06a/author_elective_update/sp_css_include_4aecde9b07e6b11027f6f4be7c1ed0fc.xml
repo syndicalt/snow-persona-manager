@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="DELETE">
+        <lazy_load>false</lazy_load>
+        <name>Persona Manager CSS</name>
+        <rtl_css_file_url/>
+        <source>local</source>
+        <sp_css display_value="Persona Manager CSS">d6dc9e9b07e6b11027f6f4be7c1ed0df</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:39:17</sys_created_on>
+        <sys_id>4aecde9b07e6b11027f6f4be7c1ed0fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Persona Manager CSS</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sp_css_include_4aecde9b07e6b11027f6f4be7c1ed0fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:39:17</sys_updated_on>
+        <url/>
+    </sp_css_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sp_css_include_4aecde9b07e6b11027f6f4be7c1ed0fc</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include"><sp_css_include action="INSERT_OR_UPDATE"><lazy_load>false</lazy_load><name>Persona Manager CSS</name><rtl_css_file_url/><source>local</source><sp_css display_value="Persona Manager CSS">d6dc9e9b07e6b11027f6f4be7c1ed0df</sp_css><sys_class_name>sp_css_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-11-22 04:39:17</sys_created_on><sys_id>4aecde9b07e6b11027f6f4be7c1ed0fc</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Persona Manager CSS</sys_name><sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package><sys_policy/><sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope><sys_update_name>sp_css_include_4aecde9b07e6b11027f6f4be7c1ed0fc</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-11-22 04:39:17</sys_updated_on><url/></sp_css_include></record_update>]]></payload>
+        <payload_hash>-266754655</payload_hash>
+        <record_name>Persona Manager CSS</record_name>
+        <reverted_from/>
+        <source>5e48114207aaf11027f6f4be7c1ed06c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:39:17</sys_created_on>
+        <sys_id>c2ecde9b07e6b11027f6f4be7c1ed0ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bf553479f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:39:17</sys_updated_on>
+        <type>CSS Include</type>
+        <update_guid>0aecde9bc8e6b11034cdd5f15aa5d2fe</update_guid>
+        <update_guid_history>0aecde9bc8e6b11034cdd5f15aa5d2fe:-266754655</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Persona Manager CSS">529d9adb07e6b11027f6f4be7c1ed005</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:42:19</sys_created_on>
+        <sys_db_object display_value="" name="sp_css_include">sp_css_include</sys_db_object>
+        <sys_id>fd3069dc1e524b48aaf15f2a1d4ed404</sys_id>
+        <sys_metadata>4aecde9b07e6b11027f6f4be7c1ed0fc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Persona Manager CSS</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sp_css_include_4aecde9b07e6b11027f6f4be7c1ed0fc</sys_update_name>
+        <sys_update_version display_value="sp_css_include_4aecde9b07e6b11027f6f4be7c1ed0fc">c2ecde9b07e6b11027f6f4be7c1ed0ff</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:42:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

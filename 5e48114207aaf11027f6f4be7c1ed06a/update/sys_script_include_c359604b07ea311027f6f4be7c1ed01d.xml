@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_975207_persona_m.personaManagerUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>personaManagerUtils</name>
+        <script><![CDATA[var personaManagerUtils = Class.create();
+personaManagerUtils.prototype = {
+    initialize: function() {
+    },
+	
+	getRolesFilter: function() {
+		var res = [];
+		var gr = new GlideRecord("sys_properties");
+		gr.get("name", "x_975207_persona_m.persona_excluded_roles");
+		var roles = gr.value.split(";");
+		
+		if(roles.length > 0) { 
+			roles.forEach(function(role) {
+				res.push("name!=" + role.trim() + "^");
+			});
+		}
+		
+		return res.join("");
+	},
+	
+	getGroupsFilter: function() {
+		var res = [];
+		var gr = new GlideRecord("sys_properties");
+		gr.get("name", "x_975207_persona_m.persona_excluded_groups");
+		var groups = gr.value.split(";");
+
+		if(groups.length > 0) {
+			groups.forEach(function(group) {
+				res.push("name!=" + group.trim() + "^");
+			});
+		}
+
+		return res.join("");
+	},
+	
+    type: 'personaManagerUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 01:38:26</sys_created_on>
+        <sys_id>c359604b07ea311027f6f4be7c1ed01d</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>personaManagerUtils</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_script_include_c359604b07ea311027f6f4be7c1ed01d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-21 02:36:05</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>This property will determine how long Persona users will remain inactive in the sys_user table after expiration. Enter the number of days you would like the archived users to remain. If you would like to disable deletion of archived Personas, set the value to 0.&#13;
+&#13;
+Default value is: 30</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_975207_persona_m.personas_archival_duration</name>
+        <read_roles/>
+        <suffix>personas_archival_duration</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 21:19:56</sys_created_on>
+        <sys_id>f31870d30722b11027f6f4be7c1ed00b</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>x_975207_persona_m.personas_archival_duration</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_properties_f31870d30722b11027f6f4be7c1ed00b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:57:18</sys_updated_on>
+        <type>integer</type>
+        <value>60</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=f31870d30722b11027f6f4be7c1ed00b"/>
+</record_update>

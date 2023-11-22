@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Groups that are excluded from being requested via Persona Manager.  Enter group names separated by semi-colons.&#13;
+&#13;
+Default value is: &lt;none&gt;</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_975207_persona_m.persona_excluded_groups</name>
+        <read_roles/>
+        <suffix>persona_excluded_groups</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 02:21:46</sys_created_on>
+        <sys_id>e193b0c7072e311027f6f4be7c1ed099</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>x_975207_persona_m.persona_excluded_groups</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_properties_e193b0c7072e311027f6f4be7c1ed099</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:33:45</sys_updated_on>
+        <type>string</type>
+        <value/>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=e193b0c7072e311027f6f4be7c1ed099"/>
+</record_update>

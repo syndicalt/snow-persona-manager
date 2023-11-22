@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_975207_persona_m_Getting Started.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css" />
+	<style>
+		div.container {
+			width: 75vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		div.header {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			height: 3rem;
+			width:100%;
+			background-color: gray;
+			top: 0;
+		}
+		div.javascript-code {
+			display:block;
+			display: flex;  
+			flex-wrap: wrap;
+			width:50vw;
+			background-color: #000;
+			color: #FFF;
+			font-family: Consolas;
+			margin-top:2rem;
+		}
+		div#codetext {
+			margin-right: 2rem;
+			margin-bottom: 2rem;
+		}
+		span.var {
+			color: #55DCD9;
+		}
+		span.reserved {
+			color: #64A7D1;
+		}
+		span.str {
+			color: #DC7B55;
+		}
+		span.method {
+			color: #DCCE55;
+		}
+		li.comment {
+			color: #9BDC55;
+		}
+		ul {
+			margin:0;
+			list-style: none;
+		}
+		span.icon {
+			margin-right:1.5rem;
+		}
+		span.icon:hover {
+			cursor: pointer;
+			color: #666;
+		}
+		.footer {
+			display: flex;
+			align-item: center;
+			justify-content: right;
+			margin-top: 15px;
+		}
+	</style>
+	<g2:evaluate var="jvar_sys_properties" jelly="true">
+		var res = []
+		var gr = new GlideRecord("sys_properties");
+		gr.addEncodedQuery("nameINx_975207_persona_m.personas_archival_duration,x_975207_persona_m.persona_approval_group,x_975207_persona_m.persona_excluded_roles,x_975207_persona_m.persona_excluded_groups");
+		gr.query();
+		
+		while(gr.next()) {
+			var obj = {};
+		
+			obj.sys_id = gr.getValue("sys_id");
+			obj.name = gr.getValue("name");
+			obj.label = cp(gr.getValue("suffix").replaceAll("_", " "));
+			obj.value = gr.getValue("value");
+			obj.description = gr.getValue("description");
+
+			res.push(obj);
+		}
+		
+		res;
+		
+		function cp(str) {
+			var arr = str.split(" ");
+		
+			arr.forEach(function(word, i) {
+				const firstLetter = word.charAt(0)
+				const remaining = word.substring(1);
+		
+				arr[i] = firstLetter.toUpperCase() + remaining;
+			});
+		
+			return arr.join(" ");
+		}
+	</g2:evaluate>
+
+	<div id="body" class="container">
+		<div>
+			<h2>Persona Manager Configuration</h2>
+		</div>
+		<div>
+			<h4>1. Copy the following code.</h4>
+		</div>
+		<div id="codeblock" class="javascript-code">
+			<div class="header">
+				<span class="icon icon-copy" title="Copy to clipboard" alt="Copy to clipboard" onClick="copyCode()" />
+			</div>
+			<div id="codetext">
+				<ul>
+					<li class="comment">
+						/***
+						* This script needs to be run from the Global scope, in conjunction with the installation of the Persona Manager application. This script will allow the Persona Manager application to delete sys_user_grmember, sys_user_has_role, and sys_user records to facilitate the removal of groups/roles from Personas, as well as the cleanup of Personas if the 
+						*/
+					</li>
+					<li>$[SP]</li>
+					<li>
+						<span class="reserved">var</span>$[SP]<span class="var">tables</span>$[SP]=$[SP][<span class="str">"sys_user_grmember"</span>,$[SP]<span class="str">"sys_user_has_role"</span>,$[SP]<span class="str">"sys_user"</span>]
+					</li>
+					<li>$[SP]</li>
+					<li>
+						<span class="var">gs</span>.<span class="method">info</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][INITIALIZE]: Initialize"</span>);
+					</li>
+					<li>$[SP]</li>
+					<li><span class="reserved">try</span>$[SP]{</li>
+					<ul>
+						<li><span class="var">tables</span>.<span class="method">forEach</span>(<span class="reserved">function</span>(<span class="var">table</span>) {</li>
+						<ul>
+							<li><span class="var">gs</span>.<span class="method">info</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][PROCESS]: Editing scoped application access for table name: " + table + ". Setting delete_access = true.")</span>;</li>
+							<li><span class="reserved">var</span>$[SP]<span class="var">gr</span>$[SP]=$[SP]<span class="reserved">new</span>$[SP]<span class="method">GlideRecordSecure</span>(<span class="str">"sys_db_object"</span>);</li>
+							<li><span class="var">gr</span>.<span class="method">get</span>(<span class="str">"name"</span>,$[SP]<span class="var">table</span>);</li>
+							<li>$[SP]</li>
+							<li><span class="var">gr.delete_access</span>$[SP]=$[SP]<span class="reserved">true</span>;</li>
+							<li><span class="var">gr</span>.<span class="method">update</span>();</li>
+						</ul>
+						<li>});</li>
+						<li>$[SP]</li>
+						<li><span class="var">gs</span>.<span class="method">info</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][FINISH]: Complete"</span>);</li>
+					</ul>
+					<li>} <span class="reserved">catch</span>(<span class="var">e</span>) {</li>
+					<ul>
+						<li><span class="var">gs</span>.<span class="method">error</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][ERROR]: " + e.message)</span>;</li>
+					</ul>
+					<li>}</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<h4>2. Set the following properties</h4>
+		</div>
+		<div class="form-group">
+			<form id="sys_properties" action="#">
+				<j2:forEach var="jvar_items" items="$[res]">
+					<div class="form-group">
+						<label class="control-label" for="$[jvar_items.name]">$[jvar_items.label]</label>
+						<label class="control-label" for="$[jvar_items.name]"></label>
+						<input id="$[jvar_items.sys_id]" name="$[jvar_items.name]" type="text" class="form-control required" value="$[jvar_items.value]" />
+						<h5>$[jvar_items.description]</h5>
+					</div>
+				</j2:forEach>
+				<div class="footer">
+					<button class="btn btn-primary" type="submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		async function copyCode() {
+			let txt = document.getElementById("codetext").innerText;
+			
+			try {
+				await navigator.clipboard.writeText(txt);
+				alert("Copied!");
+			} catch(e) {
+				console.error("Failed to copy: ", e);
+			}
+		}
+		
+		var form = document.getElementById("sys_properties");
+		
+		form.addEventListener("submit", function(e) {
+			e.preventDefault();
+			var form = e.target;
+
+			var obj = {};
+			var formData = new FormData(form);
+			for (var key of formData.keys()) {
+				obj[key] = formData.get(key);
+			}
+		
+			console.log(obj);
+		});
+	</script>
+</j:jelly>]]></html>
+        <name>Getting Started</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:03:34</sys_created_on>
+        <sys_id>66b496df07a6b11027f6f4be7c1ed088</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Getting Started</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_ui_page_66b496df07a6b11027f6f4be7c1ed088</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:03:34</sys_updated_on>
+    </sys_ui_page>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sys_ui_page_66b496df07a6b11027f6f4be7c1ed088</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint&gt;x_975207_persona_m_Getting Started.do&lt;/endpoint&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+	&lt;link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css" /&gt;
+	&lt;style&gt;
+		div.container {
+			width: 75vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		div.header {
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			height: 3rem;
+			width:100%;
+			background-color: gray;
+			top: 0;
+		}
+		div.javascript-code {
+			display:block;
+			display: flex;  
+			flex-wrap: wrap;
+			width:50vw;
+			background-color: #000;
+			color: #FFF;
+			font-family: Consolas;
+			margin-top:2rem;
+		}
+		div#codetext {
+			margin-right: 2rem;
+			margin-bottom: 2rem;
+		}
+		span.var {
+			color: #55DCD9;
+		}
+		span.reserved {
+			color: #64A7D1;
+		}
+		span.str {
+			color: #DC7B55;
+		}
+		span.method {
+			color: #DCCE55;
+		}
+		li.comment {
+			color: #9BDC55;
+		}
+		ul {
+			margin:0;
+			list-style: none;
+		}
+		span.icon {
+			margin-right:1.5rem;
+		}
+		span.icon:hover {
+			cursor: pointer;
+			color: #666;
+		}
+		.footer {
+			display: flex;
+			align-item: center;
+			justify-content: right;
+			margin-top: 15px;
+		}
+	&lt;/style&gt;
+	&lt;g2:evaluate var="jvar_sys_properties" jelly="true"&gt;
+		var res = []
+		var gr = new GlideRecord("sys_properties");
+		gr.addEncodedQuery("nameINx_975207_persona_m.personas_archival_duration,x_975207_persona_m.persona_approval_group,x_975207_persona_m.persona_excluded_roles,x_975207_persona_m.persona_excluded_groups");
+		gr.query();
+		
+		while(gr.next()) {
+			var obj = {};
+		
+			obj.sys_id = gr.getValue("sys_id");
+			obj.name = gr.getValue("name");
+			obj.label = cp(gr.getValue("suffix").replaceAll("_", " "));
+			obj.value = gr.getValue("value");
+			obj.description = gr.getValue("description");
+
+			res.push(obj);
+		}
+		
+		res;
+		
+		function cp(str) {
+			var arr = str.split(" ");
+		
+			arr.forEach(function(word, i) {
+				const firstLetter = word.charAt(0)
+				const remaining = word.substring(1);
+		
+				arr[i] = firstLetter.toUpperCase() + remaining;
+			});
+		
+			return arr.join(" ");
+		}
+	&lt;/g2:evaluate&gt;
+
+	&lt;div id="body" class="container"&gt;
+		&lt;div&gt;
+			&lt;h2&gt;Persona Manager Configuration&lt;/h2&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;h4&gt;1. Copy the following code.&lt;/h4&gt;
+		&lt;/div&gt;
+		&lt;div id="codeblock" class="javascript-code"&gt;
+			&lt;div class="header"&gt;
+				&lt;span class="icon icon-copy" title="Copy to clipboard" alt="Copy to clipboard" onClick="copyCode()" /&gt;
+			&lt;/div&gt;
+			&lt;div id="codetext"&gt;
+				&lt;ul&gt;
+					&lt;li class="comment"&gt;
+						/***
+						* This script needs to be run from the Global scope, in conjunction with the installation of the Persona Manager application. This script will allow the Persona Manager application to delete sys_user_grmember, sys_user_has_role, and sys_user records to facilitate the removal of groups/roles from Personas, as well as the cleanup of Personas if the 
+						*/
+					&lt;/li&gt;
+					&lt;li&gt;$[SP]&lt;/li&gt;
+					&lt;li&gt;
+						&lt;span class="reserved"&gt;var&lt;/span&gt;$[SP]&lt;span class="var"&gt;tables&lt;/span&gt;$[SP]=$[SP][&lt;span class="str"&gt;"sys_user_grmember"&lt;/span&gt;,$[SP]&lt;span class="str"&gt;"sys_user_has_role"&lt;/span&gt;,$[SP]&lt;span class="str"&gt;"sys_user"&lt;/span&gt;]
+					&lt;/li&gt;
+					&lt;li&gt;$[SP]&lt;/li&gt;
+					&lt;li&gt;
+						&lt;span class="var"&gt;gs&lt;/span&gt;.&lt;span class="method"&gt;info&lt;/span&gt;(&lt;span class="str"&gt;"[Persona Manager][Persona Manager: Configure Tables Script][INITIALIZE]: Initialize"&lt;/span&gt;);
+					&lt;/li&gt;
+					&lt;li&gt;$[SP]&lt;/li&gt;
+					&lt;li&gt;&lt;span class="reserved"&gt;try&lt;/span&gt;$[SP]{&lt;/li&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;span class="var"&gt;tables&lt;/span&gt;.&lt;span class="method"&gt;forEach&lt;/span&gt;(&lt;span class="reserved"&gt;function&lt;/span&gt;(&lt;span class="var"&gt;table&lt;/span&gt;) {&lt;/li&gt;
+						&lt;ul&gt;
+							&lt;li&gt;&lt;span class="var"&gt;gs&lt;/span&gt;.&lt;span class="method"&gt;info&lt;/span&gt;(&lt;span class="str"&gt;"[Persona Manager][Persona Manager: Configure Tables Script][PROCESS]: Editing scoped application access for table name: " + table + ". Setting delete_access = true.")&lt;/span&gt;;&lt;/li&gt;
+							&lt;li&gt;&lt;span class="reserved"&gt;var&lt;/span&gt;$[SP]&lt;span class="var"&gt;gr&lt;/span&gt;$[SP]=$[SP]&lt;span class="reserved"&gt;new&lt;/span&gt;$[SP]&lt;span class="method"&gt;GlideRecordSecure&lt;/span&gt;(&lt;span class="str"&gt;"sys_db_object"&lt;/span&gt;);&lt;/li&gt;
+							&lt;li&gt;&lt;span class="var"&gt;gr&lt;/span&gt;.&lt;span class="method"&gt;get&lt;/span&gt;(&lt;span class="str"&gt;"name"&lt;/span&gt;,$[SP]&lt;span class="var"&gt;table&lt;/span&gt;);&lt;/li&gt;
+							&lt;li&gt;$[SP]&lt;/li&gt;
+							&lt;li&gt;&lt;span class="var"&gt;gr.delete_access&lt;/span&gt;$[SP]=$[SP]&lt;span class="reserved"&gt;true&lt;/span&gt;;&lt;/li&gt;
+							&lt;li&gt;&lt;span class="var"&gt;gr&lt;/span&gt;.&lt;span class="method"&gt;update&lt;/span&gt;();&lt;/li&gt;
+						&lt;/ul&gt;
+						&lt;li&gt;});&lt;/li&gt;
+						&lt;li&gt;$[SP]&lt;/li&gt;
+						&lt;li&gt;&lt;span class="var"&gt;gs&lt;/span&gt;.&lt;span class="method"&gt;info&lt;/span&gt;(&lt;span class="str"&gt;"[Persona Manager][Persona Manager: Configure Tables Script][FINISH]: Complete"&lt;/span&gt;);&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;li&gt;} &lt;span class="reserved"&gt;catch&lt;/span&gt;(&lt;span class="var"&gt;e&lt;/span&gt;) {&lt;/li&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;span class="var"&gt;gs&lt;/span&gt;.&lt;span class="method"&gt;error&lt;/span&gt;(&lt;span class="str"&gt;"[Persona Manager][Persona Manager: Configure Tables Script][ERROR]: " + e.message)&lt;/span&gt;;&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;li&gt;}&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;h4&gt;2. Set the following properties&lt;/h4&gt;
+		&lt;/div&gt;
+		&lt;div class="form-group"&gt;
+			&lt;form id="sys_properties" action="#"&gt;
+				&lt;j2:forEach var="jvar_items" items="$[res]"&gt;
+					&lt;div class="form-group"&gt;
+						&lt;label class="control-label" for="$[jvar_items.name]"&gt;$[jvar_items.label]&lt;/label&gt;
+						&lt;label class="control-label" for="$[jvar_items.name]"&gt;&lt;/label&gt;
+						&lt;input id="$[jvar_items.sys_id]" name="$[jvar_items.name]" type="text" class="form-control required" value="$[jvar_items.value]" /&gt;
+						&lt;h5&gt;$[jvar_items.description]&lt;/h5&gt;
+					&lt;/div&gt;
+				&lt;/j2:forEach&gt;
+				&lt;div class="footer"&gt;
+					&lt;button class="btn btn-primary" type="submit"&gt;Save&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;script&gt;
+		async function copyCode() {
+			let txt = document.getElementById("codetext").innerText;
+			
+			try {
+				await navigator.clipboard.writeText(txt);
+				alert("Copied!");
+			} catch(e) {
+				console.error("Failed to copy: ", e);
+			}
+		}
+		
+		var form = document.getElementById("sys_properties");
+		
+		form.addEventListener("submit", function(e) {
+			e.preventDefault();
+			var form = e.target;
+
+			var obj = {};
+			var formData = new FormData(form);
+			for (var key of formData.keys()) {
+				obj[key] = formData.get(key);
+			}
+		
+			console.log(obj);
+		});
+	&lt;/script&gt;
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;Getting Started&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-11-22 04:03:34&lt;/sys_created_on&gt;&lt;sys_id&gt;66b496df07a6b11027f6f4be7c1ed088&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Getting Started&lt;/sys_name&gt;&lt;sys_package display_value="Persona Manager" source="x_975207_persona_m"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Persona Manager"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_66b496df07a6b11027f6f4be7c1ed088&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-11-22 04:03:34&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1045550903</payload_hash>
+        <record_name>Getting Started</record_name>
+        <reverted_from/>
+        <source>5e48114207aaf11027f6f4be7c1ed06c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:03:34</sys_created_on>
+        <sys_id>a2b49a1307e6b11027f6f4be7c1ed0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bf53292d70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:03:34</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>e6b49a1321e6b1103b0d2ada7bc4e5b3</update_guid>
+        <update_guid_history>e6b49a1321e6b1103b0d2ada7bc4e5b3:1045550903</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-22 04:59:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>02295498c7414fd69fe0ddb7b89a2759</sys_id>
+        <sys_metadata>66b496df07a6b11027f6f4be7c1ed088</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Getting Started</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sys_ui_page_66b496df07a6b11027f6f4be7c1ed088</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_66b496df07a6b11027f6f4be7c1ed088">a2b49a1307e6b11027f6f4be7c1ed0b4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-22 04:59:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD4f0c410f19ae311029a2d63e2f76481b</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>5e48114207aaf11027f6f4be7c1ed06a</scope_name>
+        <serialized_content>{"FlowDesigner:FD4f0c410f19ae311029a2d63e2f76481b":{"$COCollectionField":["String"],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD4f0c410f19ae311029a2d63e2f76481b.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"Array\",\"mandatory\":\"false\",\"child_name\":\"array_child0\",\"uiUniqueId\":\"463ce998-df43-48c6-b73d-4d67234fc46c\",\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD4f0c410f19ae311029a2d63e2f76481b\",\"child_label\":\"Array_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"array.string\",\"child_defaultValue\":\"\",\"child_type\":\"string\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"115b7b01-3e8f-49e8-9e31-031d2f4ca9f4\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 04:07:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>030c410f07ae311027f6f4be7c1ed01c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>FD4f0c410f19ae311029a2d63e2f76481b</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_complex_object_030c410f07ae311027f6f4be7c1ed01c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-21 04:12:26</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+</record_update>

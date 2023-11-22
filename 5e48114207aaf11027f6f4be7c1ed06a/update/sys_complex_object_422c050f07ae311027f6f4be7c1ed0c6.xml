@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD8e2c050f17ae311021e2cd08b2d0cac5</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>5e48114207aaf11027f6f4be7c1ed06a</scope_name>
+        <serialized_content>{"FlowDesigner:FD8e2c050f17ae311021e2cd08b2d0cac5":{"$COCollectionField":[{"Object":{}}],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD8e2c050f17ae311021e2cd08b2d0cac5.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"f25b67c7-3d31-4bdb-a4e4-f0aefdecd0c8\",\"default_value\":\"\",\"child_hint\":\"\",\"child_maxsize\":\"\",\"label\":\"Array\",\"mandatory\":\"false\",\"child_name\":\"array_child0\",\"uiUniqueId\":\"463ce998-df43-48c6-b73d-4d67234fc46c\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD8e2c050f17ae311021e2cd08b2d0cac5\",\"child_label\":\"Array_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"2129688b-212b-4418-bc57-9fb835018050\",\"hint\":\"\",\"uiType\":\"array.object\",\"child_defaultValue\":\"\",\"child_type\":\"object\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"8b08511a-5342-490e-9c5c-97457cec2f4e\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-21 04:08:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>422c050f07ae311027f6f4be7c1ed0c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FD8e2c050f17ae311021e2cd08b2d0cac5</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_complex_object_422c050f07ae311027f6f4be7c1ed0c6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-21 04:08:01</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+</record_update>
