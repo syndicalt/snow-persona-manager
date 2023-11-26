@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="220c154607aaf11027f6f4be7c1ed05c" label="Persona Sessions" max_length="40" name="x_975207_persona_m_persona_sessions" type="collection">
+    <element audit="true" db_object_id="220c154607aaf11027f6f4be7c1ed05c" label="Persona Sessions" max_length="40" name="x_975207_persona_m_persona_sessions" type="collection">
         <element label="Active" max_length="40" name="active" read_only="true" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" label="End Date" max_length="40" name="end_date" type="glide_date_time"/>
         <element label="Groups" max_length="4000" name="groups" read_only="true" reference="sys_user_group" type="glide_list"/>
-        <element label="Notes" max_length="4000" name="notes" type="journal"/>
+        <element label="Notes" max_length="4000" name="notes" type="journal_input"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element attributes="encode_utf8=false" label="Persona" max_length="32" name="persona" read_only="true" reference="sys_user" type="reference"/>
         <element label="Roles" max_length="4000" name="roles" read_only="true" reference="sys_user_role" type="glide_list"/>
         <element attributes="edge_encryption_enabled=true" label="Start Date" max_length="40" name="start_date" read_only="true" type="glide_date_time"/>
-        <element choice="1" label="User Type" mandatory="true" max_length="40" name="user_type" type="choice">
+        <element choice="1" label="User Type" max_length="40" name="user_type" read_only="true" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Persona User (New)" sequence="100" value="persona_user"/>
                 <element inactive_on_update="false" label="Existing User" sequence="200" value="existing_user"/>
