@@ -13,14 +13,14 @@ Default value is: &lt;none&gt;</description>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-21 02:21:46</sys_created_on>
         <sys_id>e193b0c7072e311027f6f4be7c1ed099</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>x_975207_persona_m.persona_excluded_groups</sys_name>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
         <sys_update_name>sys_properties_e193b0c7072e311027f6f4be7c1ed099</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-22 04:33:45</sys_updated_on>
+        <sys_updated_on>2023-11-26 20:14:57</sys_updated_on>
         <type>string</type>
         <value/>
         <write_roles/>
