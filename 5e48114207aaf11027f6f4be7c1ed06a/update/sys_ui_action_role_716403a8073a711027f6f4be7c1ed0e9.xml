@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 04:45:16</sys_created_on>
+        <sys_id>716403a8073a711027f6f4be7c1ed0e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_975207_persona_m.persona_admin</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_ui_action display_value="Reactivate">30644b64077a711027f6f4be7c1ed0d6</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 04:45:16</sys_updated_on>
+        <sys_user_role display_value="x_975207_persona_m.persona_admin" name="x_975207_persona_m.persona_admin">3f68194e076af11027f6f4be7c1ed057</sys_user_role>
+    </sys_ui_action_role>
+</record_update>

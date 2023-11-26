@@ -118,7 +118,7 @@
 			<h2>Persona Manager Configuration</h2>
 		</div>
 		<div>
-			<h4>1. Copy the following code.</h4>
+			<h4>1. Copy the following code and run as a Fix or Background Script.</h4>
 		</div>
 		<div id="codeblock" class="javascript-code">
 			<div class="header">
@@ -144,7 +144,7 @@
 					<ul>
 						<li><span class="var">tables</span>.<span class="method">forEach</span>(<span class="reserved">function</span>(<span class="var">table</span>) {</li>
 						<ul>
-							<li><span class="var">gs</span>.<span class="method">info</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][PROCESS]: Editing scoped application access for table name: " + table + ". Setting delete_access = true.")</span>;</li>
+							<li><span class="var">gs</span>.<span class="method">info</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][PROCESS]: Editing scoped application access for table name: " + table + ". Setting delete_access = true."</span>);</li>
 							<li><span class="reserved">var</span>$[SP]<span class="var">gr</span>$[SP]=$[SP]<span class="reserved">new</span>$[SP]<span class="method">GlideRecordSecure</span>(<span class="str">"sys_db_object"</span>);</li>
 							<li><span class="var">gr</span>.<span class="method">get</span>(<span class="str">"name"</span>,$[SP]<span class="var">table</span>);</li>
 							<li>$[SP]</li>
@@ -157,7 +157,7 @@
 					</ul>
 					<li>} <span class="reserved">catch</span>(<span class="var">e</span>) {</li>
 					<ul>
-						<li><span class="var">gs</span>.<span class="method">error</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][ERROR]: " + e.message)</span>;</li>
+						<li><span class="var">gs</span>.<span class="method">error</span>(<span class="str">"[Persona Manager][Persona Manager: Configure Tables Script][ERROR]: " + e.message</span>);</li>
 					</ul>
 					<li>}</li>
 				</ul>
@@ -230,13 +230,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-21 21:34:06</sys_created_on>
         <sys_id>f36b7c1b0722b11027f6f4be7c1ed041</sys_id>
-        <sys_mod_count>311</sys_mod_count>
+        <sys_mod_count>313</sys_mod_count>
         <sys_name>Getting Started</sys_name>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
         <sys_update_name>sys_ui_page_f36b7c1b0722b11027f6f4be7c1ed041</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-22 05:04:35</sys_updated_on>
+        <sys_updated_on>2023-11-26 03:36:57</sys_updated_on>
     </sys_ui_page>
 </record_update>
