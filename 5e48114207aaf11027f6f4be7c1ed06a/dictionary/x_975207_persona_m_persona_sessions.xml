@@ -8,6 +8,12 @@
         <element attributes="encode_utf8=false" label="Persona" max_length="32" name="persona" read_only="true" reference="sys_user" type="reference"/>
         <element label="Roles" max_length="4000" name="roles" read_only="true" reference="sys_user_role" type="glide_list"/>
         <element attributes="edge_encryption_enabled=true" label="Start Date" max_length="40" name="start_date" read_only="true" type="glide_date_time"/>
+        <element choice="1" label="User Type" mandatory="true" max_length="40" name="user_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Persona User (New)" sequence="100" value="persona_user"/>
+                <element inactive_on_update="false" label="Existing User" sequence="200" value="existing_user"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="persona"/>
         </index>

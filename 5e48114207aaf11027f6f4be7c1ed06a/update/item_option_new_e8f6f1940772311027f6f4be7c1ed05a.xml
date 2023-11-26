@@ -41,13 +41,13 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>formatter3</name>
-        <order>399</order>
+        <name>user</name>
+        <order>700</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text/>
+        <question_text>Add Persona to User</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -55,9 +55,11 @@
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
         <record_producer_table/>
-        <reference/>
-        <reference_qual/>
-        <reference_qual_condition/>
+        <reference>sys_user</reference>
+        <reference_qual>active=true^EQ</reference_qual>
+        <reference_qual_condition table="sys_user">active=true^EQ<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </reference_qual_condition>
         <rich_text/>
         <roles_to_use_also_request_for/>
         <save_script><![CDATA[/** This script is executed before the Record is generated
@@ -75,19 +77,19 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-11-21 01:59:21</sys_created_on>
-        <sys_id>22aea4cf07ea311027f6f4be7c1ed06b</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>formatter3</sys_name>
+        <sys_created_on>2023-11-25 04:28:41</sys_created_on>
+        <sys_id>e8f6f1940772311027f6f4be7c1ed05a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add Persona to User</sys_name>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
-        <sys_update_name>item_option_new_22aea4cf07ea311027f6f4be7c1ed06b</sys_update_name>
+        <sys_update_name>item_option_new_e8f6f1940772311027f6f4be7c1ed05a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-21 02:06:48</sys_updated_on>
+        <sys_updated_on>2023-11-25 04:28:41</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>20</type>
+        <type>8</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -95,7 +97,7 @@
         <validate_regex/>
         <variable_name/>
         <variable_set/>
-        <variable_width/>
+        <variable_width>100</variable_width>
         <visibility>1</visibility>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
@@ -103,22 +105,22 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=22aea4cf07ea311027f6f4be7c1ed06b"/>
-    <fx_price action="delete_multiple" query="id=22aea4cf07ea311027f6f4be7c1ed06b"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=e8f6f1940772311027f6f4be7c1ed05a"/>
+    <fx_price action="delete_multiple" query="id=e8f6f1940772311027f6f4be7c1ed05a"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>22aea4cf07ea311027f6f4be7c1ed06b</id>
+        <id>e8f6f1940772311027f6f4be7c1ed05a</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-11-21 01:59:21</sys_created_on>
-        <sys_id>25be6ccf07ea311027f6f4be7c1ed091</sys_id>
+        <sys_created_on>2023-11-25 04:28:42</sys_created_on>
+        <sys_id>9047f9940772311027f6f4be7c1ed0ec</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-21 01:59:21</sys_updated_on>
+        <sys_updated_on>2023-11-25 04:28:42</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -126,16 +128,16 @@
         <amount>0</amount>
         <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>22aea4cf07ea311027f6f4be7c1ed06b</id>
+        <id>e8f6f1940772311027f6f4be7c1ed05a</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-11-21 01:59:21</sys_created_on>
-        <sys_id>e9be6ccf07ea311027f6f4be7c1ed090</sys_id>
+        <sys_created_on>2023-11-25 04:28:42</sys_created_on>
+        <sys_id>9047f9940772311027f6f4be7c1ed0eb</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-21 01:59:21</sys_updated_on>
+        <sys_updated_on>2023-11-25 04:28:42</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
