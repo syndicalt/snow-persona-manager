@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="DELETE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 04:45:16</sys_created_on>
+        <sys_id>716403a8073a711027f6f4be7c1ed0e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_975207_persona_m.persona_admin</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_ui_action display_value="">30644b64077a711027f6f4be7c1ed0d6</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 04:45:16</sys_updated_on>
+        <sys_user_role display_value="x_975207_persona_m.persona_admin" name="x_975207_persona_m.persona_admin">3f68194e076af11027f6f4be7c1ed057</sys_user_role>
+    </sys_ui_action_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role"><sys_ui_action_role action="INSERT_OR_UPDATE"><sys_class_name>sys_ui_action_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-11-26 04:45:16</sys_created_on><sys_id>716403a8073a711027f6f4be7c1ed0e9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_975207_persona_m.persona_admin</sys_name><sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package><sys_policy/><sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope><sys_ui_action display_value="">30644b64077a711027f6f4be7c1ed0d6</sys_ui_action><sys_update_name>sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-11-26 04:45:16</sys_updated_on><sys_user_role display_value="x_975207_persona_m.persona_admin" name="x_975207_persona_m.persona_admin">3f68194e076af11027f6f4be7c1ed057</sys_user_role></sys_ui_action_role></record_update>]]></payload>
+        <payload_hash>1275650373</payload_hash>
+        <record_name>.x_975207_persona_m.persona_admin</record_name>
+        <reverted_from/>
+        <source>2367e6d7072ab11027f6f4be7c1ed0af</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 04:45:17</sys_created_on>
+        <sys_id>38a483ec073a711027f6f4be7c1ed073</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18c09f233b00000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 04:45:17</sys_updated_on>
+        <type>UI Action Role</type>
+        <update_guid>3ca483ec343a71107313d23905a8b872</update_guid>
+        <update_guid_history>3ca483ec343a71107313d23905a8b872:1275650373</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-27 02:32:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action_role">sys_ui_action_role</sys_db_object>
+        <sys_id>0f1911bfa1ff480e9550f9e8cce1e899</sys_id>
+        <sys_metadata>716403a8073a711027f6f4be7c1ed0e9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_975207_persona_m.persona_admin</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_role_716403a8073a711027f6f4be7c1ed0e9">38a483ec073a711027f6f4be7c1ed073</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-27 02:32:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

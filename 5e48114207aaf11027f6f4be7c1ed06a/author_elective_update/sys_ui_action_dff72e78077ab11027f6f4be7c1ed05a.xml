@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>end_sessions</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>false</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>true</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>End Session(s) Now</name>
+        <onclick>endSessions()</onclick>
+        <order>100</order>
+        <script><![CDATA[function endSessions() {
+	var sys_id = "";
+		
+	if(typeof g_sysId == "undefined") {
+		if(g_list.getChecked() == "") {
+			g_list.addInfoMessage(getMessage("Select a record to end session."));
+			return;
+		}
+	} else {
+		sys_id = g_sysId;
+	}
+
+	if(sys_id == "")	{
+		var checked = g_list.getChecked();
+		var checkedSplit = checked.split(',');
+
+		if(checkedSplit.length > 1) {
+			alert(getMessage("Select a single record to delete."));
+			return;
+		}
+
+		sys_id = checkedSplit[0];
+	}
+
+	var answer = confirm(getMessage("Do you want to end these session(s)?"));
+	
+	if(answer === true) {
+		alert(sys_id);
+	}
+	else {
+		return false; 
+	}
+}
+
+// if(typeof window == "undefined") {
+// 	serverEndSessions();
+// }
+
+// function serverEndSessions() {
+// 	sys_id.forEach(function(rec) {
+// 		var gd = new GlideDate();
+// 		var gr = new GlideRecord("x_975207_persona_m_persona_sessions");
+// 		gr.get(rec);
+// 		gr.end_date = gd;
+// 		gr.update();
+// 	});
+
+// 	var scriptGr = new GlideRecord("sysauto_script");
+// 	scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+// 	scriptGr.query();
+
+// 	while(scriptGr.next()) {
+// 		gs.executeNow(scriptGr);
+// 	}
+// }]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 21:18:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dff72e78077ab11027f6f4be7c1ed05a</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>End Session(s) Now</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_ui_action_dff72e78077ab11027f6f4be7c1ed05a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 23:52:35</sys_updated_on>
+        <table>x_975207_persona_m_persona_sessions</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>true</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sys_ui_action_dff72e78077ab11027f6f4be7c1ed05a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;end_sessions&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;false&lt;/form_action&gt;&lt;form_button&gt;false&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;true&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;true&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;End Session(s) Now&lt;/name&gt;&lt;onclick&gt;endSessions()&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function endSessions() {
+	var sys_id = "";
+		
+	if(typeof g_sysId == "undefined") {
+		if(g_list.getChecked() == "") {
+			g_list.addInfoMessage(getMessage("Select a record to end session."));
+			return;
+		}
+	} else {
+		sys_id = g_sysId;
+	}
+
+	if(sys_id == "")	{
+		var checked = g_list.getChecked();
+		var checkedSplit = checked.split(',');
+
+		if(checkedSplit.length &gt; 1) {
+			alert(getMessage("Select a single record to delete."));
+			return;
+		}
+
+		sys_id = checkedSplit[0];
+	}
+
+	var answer = confirm(getMessage("Do you want to end these session(s)?"));
+	
+	if(answer === true) {
+		alert(sys_id);
+	}
+	else {
+		return false; 
+	}
+}
+
+// if(typeof window == "undefined") {
+// 	serverEndSessions();
+// }
+
+// function serverEndSessions() {
+// 	sys_id.forEach(function(rec) {
+// 		var gd = new GlideDate();
+// 		var gr = new GlideRecord("x_975207_persona_m_persona_sessions");
+// 		gr.get(rec);
+// 		gr.end_date = gd;
+// 		gr.update();
+// 	});
+
+// 	var scriptGr = new GlideRecord("sysauto_script");
+// 	scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+// 	scriptGr.query();
+
+// 	while(scriptGr.next()) {
+// 		gs.executeNow(scriptGr);
+// 	}
+// }]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-11-26 21:18:35&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;dff72e78077ab11027f6f4be7c1ed05a&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;End Session(s) Now&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Persona Manager" source="x_975207_persona_m"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Persona Manager"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_dff72e78077ab11027f6f4be7c1ed05a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-11-26 23:52:35&lt;/sys_updated_on&gt;&lt;table&gt;x_975207_persona_m_persona_sessions&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;true&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-2013242522</payload_hash>
+        <record_name>End Session(s) Now</record_name>
+        <reverted_from/>
+        <source>2367e6d7072ab11027f6f4be7c1ed0af</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 23:52:35</sys_created_on>
+        <sys_id>cf3b8734073eb11027f6f4be7c1ed08d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18c0e0c986a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 23:52:35</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>873b8734a93eb1101a69a4a56cb73c8d</update_guid>
+        <update_guid_history>873b8734a93eb1101a69a4a56cb73c8d:-2013242522,4b1b4ff0523eb110e3951315610ba5a3:-100076750,4cda87f0303eb110537aa9a64d2996f1:-1541498766,e1bac7f0893eb1108355588e60347136:1197431515,908acfb0ca3eb11010a264f7ef2d5243:-1541498766,304acfb02c3eb110becd958d3ba26dfd:-368649998,de1a8bb04c3eb1106ba8a7daa18ee517:831269643,22e9c7b08b3eb1106c15e41b5b21f264:-135985002,67c94770c23eb110c25bdae3d4b252ce:1924491271,340987705c3eb110141795cd3f7f2213:1242153991,01e84770c43eb110d8ca507bef623f0b:-204227639,97f72e78967ab110b08e60e67a4bb25c:1111001384</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 23:53:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>6470697c9c584da6a7fabbed4e331e04</sys_id>
+        <sys_metadata>dff72e78077ab11027f6f4be7c1ed05a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>End Session(s) Now</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent display_value="Persona Sessions">220c154607aaf11027f6f4be7c1ed05c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sys_ui_action_dff72e78077ab11027f6f4be7c1ed05a</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_dff72e78077ab11027f6f4be7c1ed05a">cf3b8734073eb11027f6f4be7c1ed08d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 23:53:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -4,7 +4,7 @@
         <client_script/>
         <description/>
         <direct>false</direct>
-        <endpoint>x_975207_persona_m_Getting Started.do</endpoint>
+        <endpoint>x_975207_persona_m_Configuration.do</endpoint>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<style>
@@ -227,19 +227,19 @@
 		});
 	</script>
 </j:jelly>]]></html>
-        <name>Getting Started</name>
+        <name>Configuration</name>
         <processing_script/>
         <sys_class_name>sys_ui_page</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-21 21:34:06</sys_created_on>
         <sys_id>f36b7c1b0722b11027f6f4be7c1ed041</sys_id>
-        <sys_mod_count>321</sys_mod_count>
-        <sys_name>Getting Started</sys_name>
+        <sys_mod_count>322</sys_mod_count>
+        <sys_name>Configuration</sys_name>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
         <sys_update_name>sys_ui_page_f36b7c1b0722b11027f6f4be7c1ed041</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-26 20:30:24</sys_updated_on>
+        <sys_updated_on>2023-11-27 02:41:32</sys_updated_on>
     </sys_ui_page>
 </record_update>

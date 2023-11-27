@@ -29,19 +29,51 @@ personaManagerClientHandler.prototype = Object.extendsObject(global.AbstractAjax
 		}
 	},
 	
+	endSessionsFromList: function() {
+		var sessions = this.getParameter("sysparm_sessionsList");
+		
+		try {
+			var res = [];
+			var today = new GlideDateTime();
+			var gr = new GlideRecord("x_975207_persona_m_persona_sessions");
+			gr.addEncodedQuery("sys_idIN" + sessions);
+			gr.query();
+			
+			while(gr.next()) {
+				res.push(gr.number.toString());
+				gr.active = false;
+				gr.end_date = today;
+				gr.notes += "Session ended via UI Action.";
+				gr.update();
+			}
+			
+			var scriptGr = new GlideRecord("sysauto_script");
+			scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+			scriptGr.query();
+
+			while(scriptGr.next()) {
+				gs.executeNow(scriptGr);
+			}
+			
+			return JSON.stringify({ "status": 200, "message": "Records: " + res.join(",") + " updated." });
+		} catch(e) {
+			return JSON.stringify({ "status": 400, "message": e.message });
+		}
+	},
+	
     type: 'personaManagerClientHandler'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-11-22 04:13:24</sys_created_on>
         <sys_id>dea6529307e6b11027f6f4be7c1ed014</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>personaManagerClientHandler</sys_name>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
         <sys_update_name>sys_script_include_dea6529307e6b11027f6f4be7c1ed014</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-22 04:30:24</sys_updated_on>
+        <sys_updated_on>2023-11-27 02:28:23</sys_updated_on>
     </sys_script_include>
 </record_update>

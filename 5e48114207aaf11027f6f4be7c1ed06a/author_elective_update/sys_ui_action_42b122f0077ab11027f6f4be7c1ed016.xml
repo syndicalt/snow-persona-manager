@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>End Session(s) Now</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>false</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>true</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>End Session(s) Now</name>
+        <onclick>endSessions()</onclick>
+        <order>100</order>
+        <script><![CDATA[function endSessions() {
+	var sys_id;
+	
+	if (typeof g_sysId != 'undefined' && g_sysId) {
+		sys_id = g_sysId;
+	} else if (typeof g_list != 'undefined') {
+		sys_id = g_list.getChecked();
+	} else {
+		sys_id = g_form.getUniqueValue();
+	}
+
+	sys_id = sys_id.split(','); 
+
+	sys_id.forEach(function(rec) {
+		var gd = Date.now();
+		var gr = new GlideRecord("x_975207_persona_m_persona_sessions");
+		gr.get(rec);
+		gr.end_date = gd;
+		gr.update();
+	});
+
+	var scriptGr = new GlideRecord("sysauto_script");
+	scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+	scriptGr.query();
+	
+	while(scriptGr.next()) {
+		if (typeof SncTriggerSynchronizer != 'undefined') {
+			SncTriggerSynchronizer.executeNow(scriptGr);
+		} else {
+			Packages.com.snc.automation.TriggerSynchronizer.executeNow(scriptGr);
+		}
+	}
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 20:52:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>42b122f0077ab11027f6f4be7c1ed016</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>End Session(s) Now</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_update_name>sys_ui_action_42b122f0077ab11027f6f4be7c1ed016</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 21:17:29</sys_updated_on>
+        <table>x_975207_persona_m_persona_sessions</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>true</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</application>
+        <file_path/>
+        <instance_id>3423375adb9b8810b847ac44d49619ad</instance_id>
+        <instance_name>dev102255</instance_name>
+        <name>sys_ui_action_42b122f0077ab11027f6f4be7c1ed016</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;End Session(s) Now&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;false&lt;/form_action&gt;&lt;form_button&gt;false&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;true&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;true&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;End Session(s) Now&lt;/name&gt;&lt;onclick&gt;endSessions()&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function endSessions() {
+	var sys_id;
+	
+	if (typeof g_sysId != 'undefined' &amp;&amp; g_sysId) {
+		sys_id = g_sysId;
+	} else if (typeof g_list != 'undefined') {
+		sys_id = g_list.getChecked();
+	} else {
+		sys_id = g_form.getUniqueValue();
+	}
+
+	sys_id = sys_id.split(','); 
+
+	sys_id.forEach(function(rec) {
+		var gd = Date.now();
+		var gr = new GlideRecord("x_975207_persona_m_persona_sessions");
+		gr.get(rec);
+		gr.end_date = gd;
+		gr.update();
+	});
+
+	var scriptGr = new GlideRecord("sysauto_script");
+	scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+	scriptGr.query();
+	
+	while(scriptGr.next()) {
+		if (typeof SncTriggerSynchronizer != 'undefined') {
+			SncTriggerSynchronizer.executeNow(scriptGr);
+		} else {
+			Packages.com.snc.automation.TriggerSynchronizer.executeNow(scriptGr);
+		}
+	}
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-11-26 20:52:05&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;42b122f0077ab11027f6f4be7c1ed016&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;End Session(s) Now&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Persona Manager" source="x_975207_persona_m"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Persona Manager"&gt;5e48114207aaf11027f6f4be7c1ed06a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_42b122f0077ab11027f6f4be7c1ed016&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-11-26 21:17:29&lt;/sys_updated_on&gt;&lt;table&gt;x_975207_persona_m_persona_sessions&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;true&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-977315640</payload_hash>
+        <record_name>End Session(s) Now</record_name>
+        <reverted_from/>
+        <source>2367e6d7072ab11027f6f4be7c1ed0af</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 21:17:29</sys_created_on>
+        <sys_id>4bb7ee78077ab11027f6f4be7c1ed037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18c0d7e96a90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 21:17:29</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>03b7ee78a77ab1104386e6fef03e7737</update_guid>
+        <update_guid_history>03b7ee78a77ab1104386e6fef03e7737:-977315640,df67ee78287ab110fb0f848576334032:-1229820985,8144a674ca7ab110a32efd985ec1080f:-439290217,5634a674d27ab11044fbc52690bfdd1f:-1477571399,f624a2b41c7ab11026f88da31d2370bb:-1374661188,bfb326746d7ab110d8794bc09d5abf36:-2139303171,0b636af02a7ab110eac2a985706aab27:-407715407,c253e6f0c37ab110f5ffbb1c240d8890:-1435017522,6872aef0ee7ab1109e77b90d1db39493:1606934707,44426af0747ab1101fc029a7db0772dd:-374361926,df12aeb0f57ab1100a6503745b757a91:1117807786,0c1266f0e97ab1107eefebdf80b1ee5a:-1171751344,0be122f0d27ab11052d65aad5a3ec91e:619804565</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-11-26 21:19:02</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>27823bc633af49d08464a50e7d9e8900</sys_id>
+        <sys_metadata>42b122f0077ab11027f6f4be7c1ed016</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>End Session(s) Now</sys_name>
+        <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
+        <sys_parent display_value="Persona Sessions">220c154607aaf11027f6f4be7c1ed05c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
+        <sys_scope_delete display_value="">9827f2aa81804d849f900bcf6a089a10</sys_scope_delete>
+        <sys_update_name>sys_ui_action_42b122f0077ab11027f6f4be7c1ed016</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_42b122f0077ab11027f6f4be7c1ed016">4bb7ee78077ab11027f6f4be7c1ed037</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-26 21:19:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

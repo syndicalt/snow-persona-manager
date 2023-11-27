@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>Reactivate</action_name>
+        <action_name>end_session</action_name>
         <active>true</active>
-        <client>false</client>
+        <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
-        <comments/>
-        <condition>current.active==false</condition>
+        <comments>x_975207_persona_m_persona_sessions</comments>
+        <condition>current.active == true</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -27,31 +27,59 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Reactivate</name>
-        <onclick/>
+        <name>End Session Now</name>
+        <onclick>endSession()</onclick>
         <order>100</order>
-        <script/>
-        <show_insert>false</show_insert>
+        <script><![CDATA[function endSession() {
+	// var date = new Date();
+	// var today = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " 00:00:00";
+	// g_form.setValue("end_date", today);
+
+	gsftSubmit(null, g_form.getFormElement(), "end_session");	
+}
+
+if(typeof window == "undefined") {
+	serverEndSession();
+}
+
+function serverEndSession() {
+	var today = new GlideDateTime();
+	current.end_date = today;
+	current.active = false;
+	current.notes += "Session ended via UI Action.";
+	current.update();
+
+	var scriptGr = new GlideRecord("sysauto_script");
+	scriptGr.addEncodedQuery("nameINDaily: Maintain User Sessions (Existing User) - End,Daily: Maintain User Sessions (Persona User) - End");
+	scriptGr.query();
+
+	while(scriptGr.next()) {
+		gs.executeNow(scriptGr);
+	}
+
+	action.setRedirectURL(current);
+}]]></script>
+        <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-11-26 04:45:17</sys_created_on>
+        <sys_created_on>2023-11-26 21:22:11</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>30644b64077a711027f6f4be7c1ed0d6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Reactivate</sys_name>
+        <sys_id>7fc8e638077ab11027f6f4be7c1ed030</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>End Session Now</sys_name>
         <sys_overrides/>
         <sys_package display_value="Persona Manager" source="x_975207_persona_m">5e48114207aaf11027f6f4be7c1ed06a</sys_package>
         <sys_policy/>
         <sys_scope display_value="Persona Manager">5e48114207aaf11027f6f4be7c1ed06a</sys_scope>
-        <sys_update_name>sys_ui_action_30644b64077a711027f6f4be7c1ed0d6</sys_update_name>
+        <sys_update_name>sys_ui_action_7fc8e638077ab11027f6f4be7c1ed030</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-26 04:45:17</sys_updated_on>
+        <sys_updated_on>2023-11-26 23:28:05</sys_updated_on>
         <table>x_975207_persona_m_persona_sessions</table>
-        <ui11_compatible>true</ui11_compatible>
+        <ui11_compatible>false</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>
 </record_update>
